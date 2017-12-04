@@ -1,0 +1,16 @@
+NAME
+    rudd is a rsync-based backup tool.
+
+DESCRIPTION
+    Expected usage scenario is to edit /etc/rudd.conf according to your needs
+    and periodically execute (manually or using cron) rudd with super user
+    permissions to copy files using rsyncd on remote host. Here is an example.
+    $ sudo rudd --verbose rsync://backup-server.localnetwork/backup/$(hostname)
+
+AUTHORS
+    Viacheslav Chimishuk <vchimishuk@yandex.ru>
+
+COPYING
+    This programm is released under the GNU General Public License version 3 or later, which is
+    distributed in the COPYING file. You should have received a copy of the GNU General Public License along with
+    this program.  If not, see <http://www.gnu.org/licenses/>.

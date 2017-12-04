@@ -1,0 +1,46 @@
+# This file is part of rudd.
+#
+# rudd is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# rudd is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with rudd.  If not, see <http://www.gnu.org/licenses/>.
+
+# Maintainer: Viacheslav Chimishuk <vchimishuk@yandex.ru>
+
+pkgname=rudd
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="A rsync-based backup tool."
+arch=('any')
+url="https://github.com/vchimishuk/rudd"
+license=('GPL3')
+depends=('rsync' 'python-pyparsing')
+makedepends=('git')
+source=("git://github.com/vchimishuk/rudd")
+md5sums=('SKIP')
+
+prepare() {
+    cd "${srcdir}/${pkgname}"
+    git checkout -q "v${pkgver}"
+}
+
+package() {
+    cd "${srcdir}/${pkgname}"
+
+    install -d "${pkgdir}/etc"
+    install conf/rudd.conf "${pkgdir}/etc"
+    install -d "${pkgdir}/usr/bin"
+    install -m 755 bin/rudd "${pkgdir}/usr/bin"
+    install -d "${pkgdir}/usr/lib/rudd"
+    install src/*.py "${pkgdir}/usr/lib/rudd"
+    install -d "${pkgdir}/usr/share/doc/rudd"
+    install COPYING README "${pkgdir}/usr/share/doc/rudd"
+}
