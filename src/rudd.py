@@ -61,7 +61,8 @@ def sync_entry(src, dest, filters, rsync_opts):
 
 
 def parse_args():
-    ap = argparse.ArgumentParser(description="Backup files using rsync")
+    ap = argparse.ArgumentParser(prog="rudd",
+                                 description="Backup files using rsync")
     ap.add_argument(dest="dest", metavar="DEST")
     ap.add_argument("-c", "--config", default=DEFAULT_CONFIG,
                     help="configuration file name")
