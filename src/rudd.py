@@ -20,21 +20,18 @@ import config
 
 
 DEFAULT_CONFIG = "/etc/rudd.conf"
+PROG_NAME = "rudd"
 VERSION = (0, 2, 0)
-
-
-def prog_name():
-    return sys.argv[0]
 
 
 def print_version():
     v = "{}.{}.{}".format(*VERSION)
-    print("{} {}".format(prog_name(), v))
+    print("{} {}".format(PROG_NAME, v))
 
 
 def die(fmt, *args, **kwargs):
     msg = fmt.format(*args, **kwargs)
-    print("{}: {}".format(prog_name(), msg), file=sys.stderr)
+    print("{}: {}".format(PROG_NAME, msg), file=sys.stderr)
     sys.exit(1)
 
 
