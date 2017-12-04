@@ -20,7 +20,7 @@ import config
 
 
 DEFAULT_CONFIG = "/etc/rudd.conf"
-VERSION = (0, 1, 0)
+VERSION = (0, 2, 0)
 
 
 def prog_name():
