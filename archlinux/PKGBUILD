@@ -36,11 +36,11 @@ package() {
     cd "${srcdir}/${pkgname}"
 
     install -d "${pkgdir}/etc"
-    install conf/rudd.conf "${pkgdir}/etc"
+    install -m 644 conf/rudd.conf "${pkgdir}/etc"
     install -d "${pkgdir}/usr/bin"
     install -m 755 bin/rudd "${pkgdir}/usr/bin"
     install -d "${pkgdir}/usr/lib/rudd"
-    install src/*.py "${pkgdir}/usr/lib/rudd"
+    install -m 644 src/*.py "${pkgdir}/usr/lib/rudd"
     install -d "${pkgdir}/usr/share/doc/rudd"
-    install COPYING README "${pkgdir}/usr/share/doc/rudd"
+    install -m 644 COPYING README "${pkgdir}/usr/share/doc/rudd"
 }
