@@ -14,4 +14,4 @@
 # along with rudd.  If not, see <http://www.gnu.org/licenses/>.
 
 test:
-	python -m unittest -v config
+	cd src; python3 -m unittest -v config

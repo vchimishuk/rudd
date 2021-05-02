@@ -15,4 +15,4 @@
 # You should have received a copy of the GNU General Public License
 # along with rudd.  If not, see <http://www.gnu.org/licenses/>.
 
-exec /usr/bin/python -O /usr/lib/rudd/rudd.py $@
+exec /usr/bin/python3 -O /usr/lib/rudd/rudd.py $@

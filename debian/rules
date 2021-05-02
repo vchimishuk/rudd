@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	install -g 0 -o 0 -d debian/rudd
+	install -g 0 -o 0 -d debian/rudd/etc
+	install -g 0 -o 0 -m 644 conf/rudd.conf debian/rudd/etc
+	install -g 0 -o 0 -d debian/rudd/usr/bin
+	install -g 0 -o 0 -m 755 bin/rudd debian/rudd/usr/bin
+	install -g 0 -o 0 -d debian/rudd/usr/lib/rudd
+	install -g 0 -o 0 -m 644 src/*.py debian/rudd/usr/lib/rudd
+	install -g 0 -o 0 -d debian/rudd/usr/share/doc/rudd
+	install -g 0 -o 0 -m 644 COPYING README debian/rudd/usr/share/doc/rudd

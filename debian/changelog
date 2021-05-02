@@ -1,0 +1,5 @@
+rudd (0.2.1) stable; urgency=low
+
+  * Initial Debian release.
+
+ -- Viacheslav Chimishuk <vchimishuk@yandex.ru>  Sun, 02 May 2021 21:26:00 +0300

@@ -1,0 +1,12 @@
+Source: rudd
+Section: main
+Priority: optional
+Maintainer: Viacheslav Chimishuk <vchimishuk@yandex.ru>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.4
+Homepage: https://github.com/vchimishuk/rudd
+
+Package: rudd
+Architecture: all
+Depends: rsync, python3-pyparsing
+Description: rsync-based backup tool

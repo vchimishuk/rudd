@@ -21,7 +21,7 @@ import config
 
 DEFAULT_CONFIG = "/etc/rudd.conf"
 PROG_NAME = "rudd"
-VERSION = (0, 2, 0)
+VERSION = (0, 2, 1)
 
 
 def print_version():
